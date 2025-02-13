@@ -7,5 +7,5 @@
 <p><sup>1</sup>Tsinghua Univserity &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>Harbin Institute of Technology
  <br>*Equal contribution<sup>&nbsp;&nbsp;&dagger;</sup>Work done during an internship at Tsinghua University&nbsp;&nbsp;<sup>&#x2709</sup>Corresponding author
   
-### [Projectpage](https://github.com/yaourtb/GPS-Gaussian+) · [Paper](https://arxiv.org/pdf/2411.11363) 
+### [Projectpage](https://yaourtb.github.io/GPS-Gaussian+) · [Paper](https://arxiv.org/pdf/2411.11363) 
 </div>
