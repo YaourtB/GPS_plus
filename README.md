@@ -14,12 +14,13 @@
 
 We present GPS-Gaussian+, a generalizable 3D Gaussian Splatting, for human-centered scene rendering from sparse views in a feed-forward manner.
 
+https://YaourtB.github.io/assets/GPS-Gaussian+/basketball.mp4
 ## Installation
 
 To deploy and run GPS-Gaussian+, run the following scripts:
 ```
 conda env create --file environment.yml
-conda activate gps_gaussian
+conda activate gps_plus
 ```
 Then, compile the ```diff-gaussian-rasterization``` in [3DGS](https://github.com/graphdeco-inria/gaussian-splatting) repository:
 ```
@@ -28,4 +29,4 @@ cd gaussian-splatting/
 pip install -e submodules/diff-gaussian-rasterization
 cd ..
 ```
-(Optional) For training with geometry regulatization, install 
+(Optional) For training with geometry regulatization, install [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md) for **chamfer_distance**. Otherwise, set *if_chamfer = False* in train.py.  
