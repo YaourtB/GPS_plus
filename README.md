@@ -106,7 +106,7 @@ python run_interpolation.py -i example
 
 ## Train
 
-Once you prepare all training data of 9 sequences and at least one sequence as validation data. You can modify ```train_data_root``` and ```val_data_root```.
+Once you prepare all training data of 9 sequences and at least one sequence as validation data. You can modify ```train_data_root``` and ```val_data_root``` in [stage.yaml](config/stage.yaml#L16).
 ```
 python train.py
 ```
