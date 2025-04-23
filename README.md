@@ -88,7 +88,7 @@ out_dir
 │   |   ├── parameter/
 ```
 
-Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervision or evaluation, in particular 4-5.jpg are original images of 0-1 views.
+Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervision or evaluation. In particular, 4-5.jpg are original images of 0-1 views.
 
 ## Test
 
