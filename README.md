@@ -9,3 +9,23 @@
   
 ### [Projectpage](https://yaourtb.github.io/GPS-Gaussian+) · [Paper](https://arxiv.org/pdf/2411.11363) · [Dataset](https://docs.google.com/forms/d/e/1FAIpQLSexKlYfpUFcgnKM7EYoIFWi7P3J1InlHyTC82ehqka2hTiwmA/viewform?usp=dialog)
 </div>
+
+## Introduction
+
+We present GPS-Gaussian+, a generalizable 3D Gaussian Splatting, for human-centered scene rendering from sparse views in a feed-forward manner.
+
+## Installation
+
+To deploy and run GPS-Gaussian+, run the following scripts:
+```
+conda env create --file environment.yml
+conda activate gps_gaussian
+```
+Then, compile the ```diff-gaussian-rasterization``` in [3DGS](https://github.com/graphdeco-inria/gaussian-splatting) repository:
+```
+git clone https://github.com/graphdeco-inria/gaussian-splatting --recursive
+cd gaussian-splatting/
+pip install -e submodules/diff-gaussian-rasterization
+cd ..
+```
+(Optional) For training with geometry regulatization, install 
