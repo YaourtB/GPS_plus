@@ -40,18 +40,19 @@ cd ..
 2. We provide [step_0rect.py](data_process/step_0rect.py) for source view rectification and [step_1.py](data_process/step_1.py) for novel view processing. To prepare data, you set the correct path for '''data_root''' and '''out_dir''' in [step_0rect.py](data_process/step_0rect.py#L99) and [step_1.py](data_process/step_1.py#L14).
    
 - For training, you can run:
-'''
+```
 cd data_process
 python step_0rect.py -i s1a1 -t train
 python step_1.py -i s1a1 -t train
-'''
+```
 - For validation, you can run:
-'''
+```
 python step_0rect.py -i s3a5 -t val
 python step_1.py -i s3a5 -t val
-'''
+```
 - For test, you can run:
-'''
+```
 python step_0rect.py -i s1a6 -t val
 python step_1.py -i s1a6 -t val
-'''
+cd ..
+```
