@@ -1,6 +1,6 @@
 <div align="center">
 
-# <b>GPS-Gaussian+</b>: Generalizable Pixel-wise 3D Gaussian Splatting for Real-Time Human-Scene Rendering from Sparse Views
+# <b>GPS-Gaussian+</b>: Generalizable Pixel-Wise 3D Gaussian Splatting for Real-Time Human-Scene Rendering from Sparse Views
 
 [Boyao Zhou](https://yaourtb.github.io)<sup>1*</sup>, [Shunyuan Zheng](https://shunyuanzheng.github.io)<sup>2*</sup><sup>&dagger;</sup>, [Hanzhang Tu](https://itoshiko.com/)<sup>1</sup>, [Ruizhi Shao](https://dsaurus.github.io/saurus)<sup>1</sup>, [Boning Liu](https://liuboning2.github.io)<sup>1</sup>, [Shengping Zhang](http://homepage.hit.edu.cn/zhangshengping)<sup>2&#x2709;</sup>, [Liqiang Nie](https://liqiangnie.github.io)<sup>2</sup>, [Yebin Liu](https://www.liuyebin.com)<sup>1</sup>
 
@@ -14,7 +14,8 @@
 
 We present GPS-Gaussian+, a generalizable 3D Gaussian Splatting, for human-centered scene rendering from sparse views in a feed-forward manner.
 
-https://github.com/YaourtB/shishi/blob/main/asset/basketball.mp4
+https://github.com/user-attachments/assets/c24eaf44-ca1f-438a-a538-5a7d5cb78f89
+
 
 ## Installation
 
