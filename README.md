@@ -31,8 +31,27 @@ cd gaussian-splatting/
 pip install -e submodules/diff-gaussian-rasterization
 cd ..
 ```
-(Optional) For training with geometry regulatization, install [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md) for **chamfer_distance**. Otherwise, set *if_chamfer = False* in train.py.  
+(Optional) For training with geometry regulatization, install [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md) for **chamfer_distance**. Otherwise, set '''if_chamfer = False''' in train.py.  
 
 ## Data Preparation
 
-You can download our captured THumanMV dataset from [OneDrive](https://docs.google.com/forms/d/e/1FAIpQLSexKlYfpUFcgnKM7EYoIFWi7P3J1InlHyTC82ehqka2hTiwmA/viewform?usp=dialog). We provide 15 sequences of human performance captured in 10-camera setting. In our experiments, we split 10 cameras into 3 work sets: (1,2,3,4) (4,5,6,7) (7,8,9,10).  
+1. You can download our captured THumanMV dataset from [OneDrive](https://docs.google.com/forms/d/e/1FAIpQLSexKlYfpUFcgnKM7EYoIFWi7P3J1InlHyTC82ehqka2hTiwmA/viewform?usp=dialog). We provide 15 sequences of human performance captured in 10-camera setting. In our experiments, we split 10 cameras into 3 work sets: (1,2,3,4) (4,5,6,7) (7,8,9,10).
+
+2. We provide [step_0rect.py](data_process/step_0rect.py) for source view rectification and [step_1.py](data_process/step_1.py) for novel view processing. To prepare data, you set the correct path for '''data_root''' and '''out_dir''' in [step_0rect.py](data_process/step_0rect.py#L99) and [step_1.py](data_process/step_1.py#L14).
+   
+- For training, you can run:
+'''
+cd data_process
+python step_0rect.py -i s1a1 -t train
+python step_1.py -i s1a1 -t train
+'''
+- For validation, you can run:
+'''
+python step_0rect.py -i s3a5 -t val
+python step_1.py -i s3a5 -t val
+'''
+- For test, you can run:
+'''
+python step_0rect.py -i s1a6 -t val
+python step_1.py -i s1a6 -t val
+'''
