@@ -14,7 +14,7 @@
 
 We present GPS-Gaussian+, a generalizable 3D Gaussian Splatting, for human-centered scene rendering from sparse views in a feed-forward manner.
 
-https://YaourtB.github.io/assets/GPS-Gaussian+/basketball.mp4
+asset/basketball.mp4
 ## Installation
 
 To deploy and run GPS-Gaussian+, run the following scripts:
