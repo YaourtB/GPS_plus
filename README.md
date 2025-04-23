@@ -37,22 +37,52 @@ cd ..
 
 1. You can download our captured THumanMV dataset from [OneDrive](https://docs.google.com/forms/d/e/1FAIpQLSexKlYfpUFcgnKM7EYoIFWi7P3J1InlHyTC82ehqka2hTiwmA/viewform?usp=dialog). We provide 15 sequences of human performance captured in 10-camera setting. In our experiments, we split 10 cameras into 3 work sets: (1,2,3,4) (4,5,6,7) (7,8,9,10).
 
-2. We provide [step_0rect.py](data_process/step_0rect.py) for source view rectification and [step_1.py](data_process/step_1.py) for novel view processing. To prepare data, you set the correct path for '''data_root''' and '''out_dir''' in [step_0rect.py](data_process/step_0rect.py#L99) and [step_1.py](data_process/step_1.py#L14).
-   
-- For training, you can run:
+2. We provide [step_0rect.py](data_process/step_0rect.py) for source view rectification and [step_1.py](data_process/step_1.py) for novel view processing. To prepare data, you set the correct path for ```data_root``` and ```out_dir``` in [step_0rect.py](data_process/step_0rect.py#L99) and [step_1.py](data_process/step_1.py#L14). Then you can run for example:
 ```
 cd data_process
 python step_0rect.py -i s1a1 -t train
 python step_1.py -i s1a1 -t train
-```
-- For validation, you can run:
-```
+
 python step_0rect.py -i s3a5 -t val
 python step_1.py -i s3a5 -t val
-```
-- For test, you can run:
-```
-python step_0rect.py -i s1a6 -t val
-python step_1.py -i s1a6 -t val
+
+python step_0rect.py -i s1a6 -t test
+python step_1.py -i s1a6 -t test
 cd ..
+```
+
+The processed dataset should be organized as follows: 
+```
+out_dir
+├── THuman2.0_Smpl_X_Paras/
+├── train/
+│   ├── img/
+│   │   ├── s1a1_s1_0000/
+│   │   │   ├── 0.jpg
+│   │   │   ├── 1.jpg
+│   │   │   ├── 2.jpg
+│   │   │   ├── 3.jpg
+│   │   │   ├── 4.jpg
+│   │   |   └── 5.jpg
+│   |   └── ...
+│   ├── mask/
+│   │   ├── s1a1_s1_0000/
+│   │   │   ├── 0.jpg
+│   │   │   ├── 1.jpg
+│   |   └── ...
+│   ├── parameter/
+│   │   ├── s1a1_s1_0000/
+│   │   │   ├── 0_1.json
+│   │   │   ├── 2_extrinsic.npy
+│   │   │   ├── 2_intrinsic.npy
+│   |   |   └── ...
+│   |   └── ...
+└──val
+│   ├── img/
+│   ├── mask/
+│   ├── parameter/
+└──test
+│   ├── img/
+│   ├── mask/
+│   ├── parameter/
 ```
