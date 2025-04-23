@@ -94,7 +94,7 @@ Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervis
 
 We provide the pretrained checkpoint in [OneDrive](??) and 60-frame processed data in [OneDrive](??). You can put the data in ```our_dir/test```. You should furthermore modify ```local_data_root``` in [stage.yaml](config/stage.yaml#L15)
 
-- For novel-view synthesis, you can set the checkpoint path in [test.py](test.py#L151) and pick a target view in 2-3.
+- For novel-view synthesis, you can set the checkpoint path in [test.py](test.py#L150) and pick a target view in 2-3.
 ```
 python test.py -i example_process -v 2
 ```
