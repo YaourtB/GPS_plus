@@ -91,25 +91,25 @@ Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervis
 
 ## Test
 
-We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/Ea2f9bdTNoBGnl0Pg1Ali4sBU5uukgvydGraoGoNBQ40dA?e=GWsnvA) and 60-frame processed data in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/EXeLFNTNDBxCgkmV3spUMugBjbGEL8QXBL3w7QGOoA7uAw?e=C8VqZa). You can put the data in ```our_dir/test```. You should furthermore modify ```local_data_root``` in [stage.yaml](config/stage.yaml#L15)
+We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/Ea2f9bdTNoBGnl0Pg1Ali4sBU5uukgvydGraoGoNBQ40dA?e=GWsnvA) and 60-frame processed data in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/EXeLFNTNDBxCgkmV3spUMugBjbGEL8QXBL3w7QGOoA7uAw?e=C8VqZa). You can put the data in ```our_dir/test```. You should furthermore modify ```local_data_root``` in [stage.yaml](config/stage.yaml#L16)
 
 - For novel-view synthesis, you can set the checkpoint path in [test.py](test.py#L150) and pick a target view in 2-3.
 ```
 python test.py -i example_data -v 2
 ```
 
-- For freeview rendering, you can set ```LOOP_NUM``` in [run_interpolation.py](run_interpolation.py#L271) for frames per work set.
+- For freeview rendering, you can set the checkpoint path and ```LOOP_NUM``` in [run_interpolation.py](run_interpolation.py#L271) for frames per work set.
 ```
 python run_interpolation.py -i example_data
 ```
 
 ## Train
 
-Once you prepare all training data of 9 sequences and at least one sequence as validation data. You can modify ```train_data_root``` and ```val_data_root``` in [stage.yaml](config/stage.yaml#L16).
+Once you prepare all training data of 9 sequences and at least one sequence as validation data. You can modify ```train_data_root``` and ```val_data_root``` in [stage.yaml](config/stage.yaml#L17).
 ```
 python train.py
 ```
-
+If you would like to train our network with your own data, you can organize the dataset as above and set ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15). We use ```inverse_depth_init = 0.3``` in our experiments for the depth of the scene is around 3.33 meters.
 # Citation
 
 If you find the code or the data is useful for your research, please consider citing:
