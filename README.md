@@ -54,7 +54,6 @@ cd ..
 The processed dataset should be organized as follows: 
 ```
 out_dir
-├── THuman2.0_Smpl_X_Paras/
 ├── train/
 │   ├── img/
 │   │   ├── s1a1_s1_0000/
