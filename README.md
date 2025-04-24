@@ -98,7 +98,7 @@ We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.
 python test.py -i example_data -v 2
 ```
 
-- For freeview rendering, you can set the checkpoint path and ```LOOP_NUM``` in [run_interpolation.py](run_interpolation.py#L271) for frames per work set.
+- For freeview rendering, you can set the checkpoint path and ```LOOP_NUM``` in [run_interpolation.py](run_interpolation.py#L268) for frames per work set.
 ```
 python run_interpolation.py -i example_data
 ```
