@@ -103,6 +103,8 @@ python test.py -i example_data -v 2
 python run_interpolation.py -i example_data
 ```
 
+You can check results in ```experiments\gps_plus```.
+
 ## Train
 
 Once you prepare all training data of 9 sequences and at least one sequence as validation data. You can modify ```train_data_root``` and ```val_data_root``` in [stage.yaml](config/stage.yaml#L17).
