@@ -263,7 +263,7 @@ if __name__ == '__main__':
     cfg.exp_name = 'gps_plus' # TODO
 
     cfg.record.show_path = "experiments/%s/show_free_%s" % (cfg.exp_name, tar_n)
-    cfg.restore_ckpt = 'ckpt/gps_plus_latest.pth' # TODO
+    cfg.restore_ckpt = 'PATH/TO/gps_plus_latest.pth' # TODO
     cfg.freeze()
     LOOP_NUM = 20
 
