@@ -95,12 +95,12 @@ We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.
 
 - For novel-view synthesis, you can set the checkpoint path in [test.py](test.py#L150) and pick a target view in 2-3.
 ```
-python test.py -i example_process -v 2
+python test.py -i example_data -v 2
 ```
 
 - For freeview rendering, you can set ```LOOP_NUM``` in [run_interpolation.py](run_interpolation.py#L271) for frames per work set.
 ```
-python run_interpolation.py -i example
+python run_interpolation.py -i example_data
 ```
 
 ## Train
