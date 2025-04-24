@@ -147,7 +147,7 @@ if __name__ == '__main__':
             cfg.record.show_path = "experiments/%s/show_%s" % (cfg.exp_name, seq_name)
             cfg.seq_name = seq_name 
             cfg.dataset.val_novel_id = [views_n] 
-            cfg.restore_ckpt = 'ckpt/gps_plus_latest.pth' # TODO
+            cfg.restore_ckpt = 'PATH/TO/gps_plus_latest.pth' # TODO
 
             cfg.freeze()
             print(cfg.restore_ckpt)
