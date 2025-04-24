@@ -1,0 +1,34 @@
+name: 'gps_plus'
+
+lr: 0.0002
+wdecay: 1e-5
+batch_size: 1
+num_steps: 100000
+
+dataset:
+  source_id: [0, 1]
+  train_novel_id: [2, 3, 4, 5]
+  val_novel_id: [2, 3]
+  use_hr_img: False
+  use_depth_init: True
+  use_local_data: True
+  inverse_depth_init: 0.3
+  local_data_root: '/PATH/TO/data'       # TODO
+  train_data_root: '/PATH/TO/data/train' # TODO
+  val_data_root: '/PATH/TO/data/val'     # TODO
+
+raft:
+  mixed_precision: False
+  train_iters: 3
+  val_iters: 3
+  encoder_dims: [32, 48, 96]  
+  hidden_dims: [96, 96, 96]  
+
+gsnet:
+  encoder_dims: [32, 48, 96]
+  decoder_dims: [48, 64, 96]
+  parm_head_dim: 32
+
+record:
+  loss_freq: 3000
+  eval_freq: 3000
