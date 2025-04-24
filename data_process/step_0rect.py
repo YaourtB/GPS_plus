@@ -96,8 +96,8 @@ def save_np_to_json(parm, save_name, img_sz):
 
 if __name__ == '__main__':
     # python step_0rect.py -i s2a3 -t val
-    data_root = '/home/hjx/data4T/raw_thumanmv/' # TODO
-    out_dir = '/home/hjx/data4T/raw_thumanmv/' # TODO
+    data_root = '/PATH/TO/raw_data/' # TODO
+    out_dir = '/PATH/TO/processed_data/' # TODO
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', type=str, required=True, help='input sequence')
