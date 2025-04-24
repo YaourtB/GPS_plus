@@ -1,7 +1,5 @@
 
 import torch
-from pytorch3d.structures import Pointclouds
-from pytorch3d.io import IO
 import trimesh
 import numpy as np
 import cv2
