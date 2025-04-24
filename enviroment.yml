@@ -13,5 +13,8 @@ dependencies:
   - tensorboard
   - scipy
   - pip:
+    - numpy==1.24.0
     - opencv-python
+    - einops
+    - trimesh
     - yacs==0.1.8
