@@ -17,4 +17,5 @@ dependencies:
     - opencv-python
     - einops
     - trimesh
+    - kornia
     - yacs==0.1.8
