@@ -34,14 +34,11 @@ import warnings
 import trimesh 
 warnings.filterwarnings("ignore", category=UserWarning)
 from PIL import Image
-import kornia 
-import matplotlib.pyplot as plt 
+
 import json 
 
 from copy import deepcopy
 
-def warp_image_mask(image, wx, wy):
-    return kornia.geometry.transform.remap(image, wx, wy, )
 
 def read_calib(calib):  
     # print(calib)
