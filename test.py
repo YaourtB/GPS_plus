@@ -18,7 +18,7 @@ from lib.train_recoder import Logger, file_backup
 from lib.GaussianRender import pts2render
 from lib.gs_utils.loss_utils import l1_loss, ssim
 from lib.gs_utils.image_utils import psnr
-import lpips
+
 from copy import deepcopy
 import torch
 import torch.nn as nn
