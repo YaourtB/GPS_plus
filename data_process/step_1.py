@@ -8,7 +8,6 @@ from pathlib import Path
 import numpy as np
 import argparse 
 
-
 # python step_1.py -i s2a3 -t val
 
 data_root = '/PATH/TO/raw_data/' # TODO
@@ -21,10 +20,10 @@ arg = parser.parse_args()
 
 data_n = arg.input 
 ori_dir = data_root+data_n
-out_dir += arg.trainval
+processed_data_root += arg.trainval
 
 
-Path(out_dir).mkdir(exist_ok=True, parents=True)
+Path(processed_data_root).mkdir(exist_ok=True, parents=True)
 
 
 file_list = sorted(os.listdir(ori_dir))
@@ -51,14 +50,14 @@ elif arg.trainval == 'val':
     used_time_id_list = sorted(used_time_id_list)[50:80]
 elif arg.trainval == 'test':
     used_time_id_list = sorted(used_time_id_list)
-    out_dir = out_dir + '/' + data_n + '_process'
+    processed_data_root = processed_data_root + '/' + data_n + '_process'
 else:
     exit()
 
-img_dir = os.path.join(out_dir, 'img')
+img_dir = os.path.join(processed_data_root, 'img')
 Path(img_dir).mkdir(exist_ok=True, parents=True)
 
-par_dir = os.path.join(out_dir, 'parameter')
+par_dir = os.path.join(processed_data_root, 'parameter')
 Path(par_dir).mkdir(exist_ok=True, parents=True)
 
 cam_move = [0, 0, 0, 0] #TODO
@@ -152,8 +151,3 @@ for cam_id_list in cam_id_list_s:
 
             img_out = cv2.resize(img_tmp, (1024, 1024))
             cv2.imwrite(out_path, img_out.astype(np.uint8))
-
-
-
-
-
