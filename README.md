@@ -53,7 +53,7 @@ cd ..
 
 The processed dataset should be organized as follows: 
 ```
-out_dir
+processed_data_root
 ├── train/
 │   ├── img/
 │   │   ├── s1a1_s1_0000/
@@ -91,7 +91,7 @@ Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervis
 
 ## Test
 
-We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/Ea2f9bdTNoBGnl0Pg1Ali4sBU5uukgvydGraoGoNBQ40dA?e=GWsnvA) and 60-frame processed data in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/EXeLFNTNDBxCgkmV3spUMugBjbGEL8QXBL3w7QGOoA7uAw?e=C8VqZa). You can directly put the downloaded data into ```/PATH/TO/our_dir/test/```. You furthermore modify ```local_data_root=/PATH/TO/out_dir/``` in [stage.yaml](config/stage.yaml#L16)
+We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/Ea2f9bdTNoBGnl0Pg1Ali4sBU5uukgvydGraoGoNBQ40dA?e=GWsnvA) and 60-frame processed data in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/EXeLFNTNDBxCgkmV3spUMugBjbGEL8QXBL3w7QGOoA7uAw?e=C8VqZa). You can directly put the downloaded data into ```/PATH/TO/processed_data_root/test/```. You furthermore modify ```local_data_root=/PATH/TO/processed_data_root/``` in [stage.yaml](config/stage.yaml#L16)
 
 - For novel-view synthesis, you can set the checkpoint path in [test.py](test.py#L150) and pick a target view in 2-3.
 ```
