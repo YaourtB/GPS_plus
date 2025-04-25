@@ -97,7 +97,7 @@ def save_np_to_json(parm, save_name, img_sz):
 if __name__ == '__main__':
     # python step_0rect.py -i s2a3 -t val
     data_root = '/PATH/TO/raw_data/' # TODO
-    processed_data_root = '/PATH/TO/processed_data/' # TODO
+    processed_data_root = '/PATH/to/processed_data/' # TODO
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', type=str, required=True, help='input sequence')
@@ -106,7 +106,7 @@ if __name__ == '__main__':
 
     data_n = arg.input 
     ori_dir = data_root+data_n
-    out_dir += arg.trainval
+    processed_data_root += arg.trainval
     calib_path = ori_dir+'/calibration_full.json'
     
     file_list = sorted(os.listdir(ori_dir))
@@ -129,19 +129,19 @@ if __name__ == '__main__':
         used_time_id_list = sorted(used_time_id_list)[50:80]
     elif arg.trainval == 'test':
         used_time_id_list = sorted(used_time_id_list)
-        out_dir = out_dir + '/' + data_n + '_process'
-        Path(out_dir).mkdir(exist_ok=True, parents=True)
-        shutil.copyfile(calib_path, out_dir+'/calibration_full.json')
+        processed_data_root = processed_data_root + '/' + data_n + '_process'
+        Path(processed_data_root).mkdir(exist_ok=True, parents=True)
+        shutil.copyfile(calib_path, processed_data_root+'/calibration_full.json')
     else:
         exit()
 
-    img_dir = os.path.join(out_dir, 'img')
+    img_dir = os.path.join(processed_data_root, 'img')
     Path(img_dir).mkdir(exist_ok=True, parents=True)
 
-    msk_dir = os.path.join(out_dir, 'mask')
+    msk_dir = os.path.join(processed_data_root, 'mask')
     Path(msk_dir).mkdir(exist_ok=True, parents=True)
 
-    par_dir = os.path.join(out_dir, 'parameter')
+    par_dir = os.path.join(processed_data_root, 'parameter')
     Path(par_dir).mkdir(exist_ok=True, parents=True)
     
     cam_id_list_s = [
