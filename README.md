@@ -37,7 +37,7 @@ cd ..
 
 1. You can download our captured THumanMV dataset from [OneDrive](https://docs.google.com/forms/d/e/1FAIpQLSexKlYfpUFcgnKM7EYoIFWi7P3J1InlHyTC82ehqka2hTiwmA/viewform?usp=dialog). We provide 15 sequences of human performance captured in 10-camera setting. In our experiments, we split 10 cameras into 3 work sets: (1,2,3,4) (4,5,6,7) (7,8,9,10).
 
-2. We provide [step_0rect.py](data_process/step_0rect.py) for source view rectification and [step_1.py](data_process/step_1.py) for novel view processing. To prepare data, you set the correct path for ```data_root```(raw data) and ```out_dir```(processed data) in [step_0rect.py](data_process/step_0rect.py#L99) and [step_1.py](data_process/step_1.py#L14). Then you can run for example:
+2. We provide [step_0rect.py](data_process/step_0rect.py) for source view rectification and [step_1.py](data_process/step_1.py) for novel view processing. To prepare data, you set the correct path for ```data_root```(raw data) and ```processed_data_root```(processed data) in [step_0rect.py](data_process/step_0rect.py#L99) and [step_1.py](data_process/step_1.py#L13). Then you can run for example:
 ```
 cd data_process
 python step_0rect.py -i s1a1 -t train
