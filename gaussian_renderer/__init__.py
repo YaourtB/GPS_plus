@@ -45,13 +45,14 @@ def render(data, idx, pts_xyz, pts_rgb, rotations, scales, opacity, bg_color):
         sh_degree=3,
         campos=data['novel_view']['camera_center'][idx],
         prefiltered=False,
-        debug=False
+        debug=False,
+        antialiasing=False,
     )
 
     rasterizer = GaussianRasterizer(raster_settings=raster_settings)
 
     # Rasterize visible Gaussians to image, obtain their radii (on screen).
-    rendered_image, radii = rasterizer(
+    rendered_image = rasterizer(
         means3D=pts_xyz,            # [N, 3]
         means2D=screenspace_points,
         shs=None,
@@ -65,4 +66,4 @@ def render(data, idx, pts_xyz, pts_rgb, rotations, scales, opacity, bg_color):
     # They will be excluded from value updates used in the splitting criteria.
 
 
-    return rendered_image
+    return rendered_image[0]
