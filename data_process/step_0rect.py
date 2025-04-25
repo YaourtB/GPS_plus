@@ -3,7 +3,7 @@ import os
 import random
 from PIL import Image
 import cv2
-import matplotlib.pyplot as plt 
+
 from pathlib import Path
 import json
 import glob 
