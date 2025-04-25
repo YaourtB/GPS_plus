@@ -31,13 +31,13 @@ cd gaussian-splatting/
 pip install -e submodules/diff-gaussian-rasterization
 cd ..
 ```
-(Optional) For training with geometry regulatization, install [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md) for **chamfer_distance**. Otherwise, set '''if_chamfer = False''' in train.py.  
+(Optional) For training with geometry regulatization, install [pytorch3d](https://github.com/facebookresearch/pytorch3d/blob/main/INSTALL.md) for **chamfer_distance**. Otherwise, set ```if_chamfer = False``` in [train.py](train.py#L69).  
 
 ## Data Preparation
 
 1. You can download our captured THumanMV dataset from [OneDrive](https://docs.google.com/forms/d/e/1FAIpQLSexKlYfpUFcgnKM7EYoIFWi7P3J1InlHyTC82ehqka2hTiwmA/viewform?usp=dialog). We provide 15 sequences of human performance captured in 10-camera setting. In our experiments, we split 10 cameras into 3 work sets: (1,2,3,4) (4,5,6,7) (7,8,9,10).
 
-2. We provide [step_0rect.py](data_process/step_0rect.py) for source view rectification and [step_1.py](data_process/step_1.py) for novel view processing. To prepare data, you set the correct path for ```data_root``` and ```out_dir``` in [step_0rect.py](data_process/step_0rect.py#L99) and [step_1.py](data_process/step_1.py#L14). Then you can run for example:
+2. We provide [step_0rect.py](data_process/step_0rect.py) for source view rectification and [step_1.py](data_process/step_1.py) for novel view processing. To prepare data, you set the correct path for ```data_root```(raw data) and ```out_dir```(processed data) in [step_0rect.py](data_process/step_0rect.py#L99) and [step_1.py](data_process/step_1.py#L14). Then you can run for example:
 ```
 cd data_process
 python step_0rect.py -i s1a1 -t train
@@ -91,7 +91,7 @@ Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervis
 
 ## Test
 
-We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/Ea2f9bdTNoBGnl0Pg1Ali4sBU5uukgvydGraoGoNBQ40dA?e=GWsnvA) and 60-frame processed data in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/EXeLFNTNDBxCgkmV3spUMugBjbGEL8QXBL3w7QGOoA7uAw?e=C8VqZa). You can put the data in ```our_dir/test```. You should furthermore modify ```local_data_root``` in [stage.yaml](config/stage.yaml#L16)
+We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/Ea2f9bdTNoBGnl0Pg1Ali4sBU5uukgvydGraoGoNBQ40dA?e=GWsnvA) and 60-frame processed data in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/EXeLFNTNDBxCgkmV3spUMugBjbGEL8QXBL3w7QGOoA7uAw?e=C8VqZa). You can directly put the downloaded data into ```/PATH/TO/our_dir/test/```. You furthermore modify ```local_data_root=/PATH/TO/out_dir/``` in [stage.yaml](config/stage.yaml#L16)
 
 - For novel-view synthesis, you can set the checkpoint path in [test.py](test.py#L150) and pick a target view in 2-3.
 ```
