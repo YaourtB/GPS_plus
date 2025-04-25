@@ -97,7 +97,7 @@ def save_np_to_json(parm, save_name, img_sz):
 if __name__ == '__main__':
     # python step_0rect.py -i s2a3 -t val
     data_root = '/PATH/TO/raw_data/' # TODO
-    processed_data_root = '/PATH/to/processed_data/' # TODO
+    processed_data_root = '/PATH/TO/processed_data/' # TODO
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', type=str, required=True, help='input sequence')
