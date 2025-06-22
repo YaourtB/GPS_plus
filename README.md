@@ -89,6 +89,23 @@ processed_data_root
 
 Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervision or evaluation. In particular, 4-5.jpg are original images of 0-1 views.
 
+## Custom Data Preparation
+
+1. We assume that you have already calibrated the cameras using the images of first frame with COLMAP and obtained the "sparse" folder.
+2. Organize your sequential custom data into the following structure:
+```
+raw_data_root
+├── sparse/
+│   ├── 0/
+│   │   ├── cameras.bin
+│   │   └── images.bin
+└── frame0_cam0.jpg (e.g. 0000_00.jpg)
+├── frame0_cam1.jpg
+├── ...
+├── frame0_camN.jpg
+├── ......
+└── frameT_camN.jpg
+
 ## Test
 
 We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/Ea2f9bdTNoBGnl0Pg1Ali4sBU5uukgvydGraoGoNBQ40dA?e=GWsnvA) and 60-frame processed data in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/EXeLFNTNDBxCgkmV3spUMugBjbGEL8QXBL3w7QGOoA7uAw?e=C8VqZa). You can directly put the downloaded data into ```/PATH/TO/processed_data_root/test/```. You furthermore modify ```local_data_root=/PATH/TO/processed_data_root/``` in [stage.yaml](config/stage.yaml#L16)
