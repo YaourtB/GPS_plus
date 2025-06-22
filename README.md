@@ -94,7 +94,7 @@ Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervis
 1. We assume that you have already calibrated the cameras using the images of the first frame with COLMAP and obtained the "sparse" folder.
 2. Organize your sequential custom data into the following structure:
 ```
-raw_data_root
+raw_custom_data_root
 ├── sparse/
 │   ├── 0/
 │   │   ├── cameras.bin
@@ -103,6 +103,7 @@ raw_data_root
 ├── frame0_cam1.jpg
 ├── ...
 ├── frame0_camN.jpg
+├── ......
 ├── ......
 └── frameT_camN.jpg
 ```
