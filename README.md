@@ -91,7 +91,7 @@ Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervis
 
 ## Custom Data Preparation
 
-1. We assume that you have already calibrated the cameras using the images of first frame with COLMAP and obtained the "sparse" folder.
+1. We assume that you have already calibrated the cameras using the images of the first frame with COLMAP and obtained the "sparse" folder.
 2. Organize your sequential custom data into the following structure:
 ```
 raw_data_root
