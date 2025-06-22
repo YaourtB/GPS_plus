@@ -105,6 +105,7 @@ raw_data_root
 ├── frame0_camN.jpg
 ├── ......
 └── frameT_camN.jpg
+```
 
 ## Test
 
