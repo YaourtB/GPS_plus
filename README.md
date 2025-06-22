@@ -99,7 +99,7 @@ raw_data_root
 │   ├── 0/
 │   │   ├── cameras.bin
 │   │   └── images.bin
-└── frame0_cam0.jpg (e.g. 0000_00.jpg)
+├── frame0_cam0.jpg (e.g. 0000_00.jpg)
 ├── frame0_cam1.jpg
 ├── ...
 ├── frame0_camN.jpg
