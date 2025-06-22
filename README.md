@@ -107,6 +107,7 @@ raw_custom_data_root
 ├── ......
 └── frameT_camN.jpg
 ```
+3. You can probably estimate the ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15) by reading the output of the distance of the left-most and the right-most cameras.
 
 ## Test
 
