@@ -148,7 +148,7 @@ python step_1_custom.py -t val -n 4
 ```
 python train.py
 ```
-If the results are not good, you could modify ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15) or crop the processed images along with modifying the intrinsic parameters as in [here](https://github.com/YaourtB/GPS_plus/blob/main/data_process/step_0rect.pyL84).
+If the results are not good, you could modify ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15) or crop the processed images along with modifying the intrinsic parameters as in [here](https://github.com/YaourtB/GPS_plus/blob/main/data_process/step_0rect.py#L84-L90).
 
 # Citation
 
