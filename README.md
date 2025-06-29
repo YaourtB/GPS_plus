@@ -89,26 +89,6 @@ processed_data_root
 
 Note that 0-1.jpg are rectified input images and 2-5.jpg are images for supervision or evaluation. In particular, 4-5.jpg are original images of 0-1 views.
 
-## Custom Data Preparation
-
-1. We assume that you have already calibrated the cameras using the images of the first frame with COLMAP and obtained the "sparse" folder.
-2. Organize your sequential custom data into the following structure:
-```
-raw_custom_data_root
-├── sparse/
-│   ├── 0/
-│   │   ├── cameras.bin
-│   │   └── images.bin
-├── frame0_cam0.jpg (e.g. 0000_00.jpg)
-├── frame0_cam1.jpg
-├── ...
-├── frame0_camN.jpg
-├── ......
-├── ......
-└── frameT_camN.jpg
-```
-3. You can probably estimate the ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15) by reading the output of the distance of the left-most and the right-most cameras.
-
 ## Test
 
 We provide the pretrained checkpoint in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/Ea2f9bdTNoBGnl0Pg1Ali4sBU5uukgvydGraoGoNBQ40dA?e=GWsnvA) and 60-frame processed data in [OneDrive](https://mailtsinghuaeducn-my.sharepoint.com/:u:/g/personal/bzhou22_mail_tsinghua_edu_cn/EXeLFNTNDBxCgkmV3spUMugBjbGEL8QXBL3w7QGOoA7uAw?e=C8VqZa). You can directly put the downloaded data into ```/PATH/TO/processed_data_root/test/```. You furthermore modify ```local_data_root=/PATH/TO/processed_data_root/``` in [stage.yaml](config/stage.yaml#L16)
@@ -133,6 +113,41 @@ python train.py
 ```
 If you would like to train our network with your own data, you can organize the dataset as above and set ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15). We use ```inverse_depth_init = 0.3``` in our experiments for the largest depth of the scene is around 3.33 meters.
 # Citation
+
+## Train on Custom Data
+
+### Custom Data Preparation
+
+1. We assume that you have already calibrated the cameras using the images of the first frame with COLMAP and obtained the "sparse" folder. We provide an example [custom_data.zip](https://github.com/YaourtB/GPS_plus/blob/main/custom_data.zip) in this repo.
+2. Organize your sequential custom data into the following structure:
+```
+raw_custom_data_root
+├── sparse/
+│   ├── 0/
+│   │   ├── cameras.bin
+│   │   └── images.bin
+├── frame0_cam0.jpg (e.g. 0000_00.jpg)
+├── frame0_cam1.jpg
+├── ...
+├── frame0_camN.jpg
+├── ......
+├── ......
+└── frameT_camN.jpg
+```
+3. You should determine the size (n) of the work set of cameras, which means how many cameras are there between the leftmost and the rightmost. This number can not be too large. Otherwise, the rectification could collapse. Once you set [```/PATH/TO/custom_data```](https://github.com/YaourtB/GPS_plus/blob/main/data_process/step_0rect_custom.py#L124), you can run followings 
+```
+cd data_process
+python step_0rect_custom.py -t train -n 4
+python step_1_custom.py -t train -n 4
+
+python step_0rect_custom.py -t val -n 4
+python step_1_custom.py -t val -n 4
+```
+4. You can probably estimate the ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15) by reading the output of the distance of the left-most and the right-most cameras. See [here](https://github.com/YaourtB/GPS_plus/blob/main/data_process/step_0rect_custom.py#L245).
+5. You can modify ```train_data_root``` and ```val_data_root``` in [stage.yaml](config/stage.yaml#L17) and train our network from scratch.
+```
+python train.py
+```
 
 If you find the code or the data is useful for your research, please consider citing:
 ```bibtex
