@@ -112,7 +112,6 @@ Once you prepare all training data of 9 sequences and at least one sequence as v
 python train.py
 ```
 If you would like to train our network with your own data, you can organize the dataset as above and set ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15). We use ```inverse_depth_init = 0.3``` in our experiments for the largest depth of the scene is around 3.33 meters.
-# Citation
 
 ## Train on Custom Data
 
@@ -148,6 +147,8 @@ python step_1_custom.py -t val -n 4
 ```
 python train.py
 ```
+
+# Citation
 
 If you find the code or the data is useful for your research, please consider citing:
 ```bibtex
