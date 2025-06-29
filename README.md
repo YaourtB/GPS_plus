@@ -143,10 +143,12 @@ python step_0rect_custom.py -t val -n 4
 python step_1_custom.py -t val -n 4
 ```
 4. You can probably estimate the ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15) by reading the output of the distance of the left-most and the right-most cameras. See [here](https://github.com/YaourtB/GPS_plus/blob/main/data_process/step_0rect_custom.py#L245).
-5. You can modify ```train_data_root``` and ```val_data_root``` in [stage.yaml](config/stage.yaml#L17) and train our network from scratch.
+5. Please verify that the correponding pixels of 0.jpg and 1.jpg in the processed data are aligned in the same horizontal line. If it is not the case, the work set size (n) might be too large or the calibration in sparse folder is not good.
+6. You can modify ```train_data_root``` and ```val_data_root``` in [stage.yaml](config/stage.yaml#L17) with your [```/PATH/TO/processed_custom_data```](https://github.com/YaourtB/GPS_plus/blob/main/data_process/step_0rect_custom.py#L125) and train our network from scratch.
 ```
 python train.py
 ```
+If the results are not good, you could modify ```inverse_depth_init``` in [stage.yaml](config/stage.yaml#L15) or crop the processed images along with modifying the intrinsic parameters as in [here](https://github.com/YaourtB/GPS_plus/blob/main/data_process/step_0rect.pyL84-L90).
 
 # Citation
 
