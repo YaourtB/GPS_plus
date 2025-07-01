@@ -82,7 +82,7 @@ class Crossatt_EncoderLayer(nn.Module):
         self.k_proj = nn.Linear(d_model, d_model, bias=False)
         self.v_proj = nn.Linear(d_model, d_model, bias=False)      
         #print(self.dim, self.nhead)  
-        self.attention = MultiheadAttention(d_model, self.nhead)
+        self.attention = MultiheadAttention(d_model, self.nhead, batch_first=True)
         self.merge = nn.Linear(d_model, d_model, bias=False)
 
         # feed-forward network
