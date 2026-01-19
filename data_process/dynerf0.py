@@ -35,6 +35,7 @@ for i in range(cam_num):
 
     pose_cv_np[i, :3, :3] = R[i]
     print(pose_cv_np.shape)
+    # LLFF/llff/poses/pose_utils.py
     pose_cv_np[i, :3, :3] = np.concatenate([pose_cv_np[i,:3, 1:2], pose_cv_np[i, :3, 0:1], -pose_cv_np[i, :3, 2:3]], -1)
     pose_cv_np[i, :3, 3:4] = T[i]
     pose_cv_np[i, 3, 3] = 1
